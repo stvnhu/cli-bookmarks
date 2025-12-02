@@ -1,5 +1,6 @@
 # cli-bookmarks
 
-works for wsl
-requires fzf
+works for linux  
+requires fzf and librewolf  
+can change librewolf to any browser  
 

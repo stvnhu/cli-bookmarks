@@ -34,7 +34,7 @@ bookmark() {
   selection=$(bookmark_list | fzf --with-nth=1 --delimiter='\t' --preview 'echo {2}' --preview-window=up:1:wrap)
   [[ -n "${selection}" ]] || return
   url=$(echo "${selection}" | cut -f2)
-  explorer.exe "${url}"
+  librewolf "${url}"
 }
 
 alias bm=bookmark
