@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bookmarks_file="${HOME}/.bookmarks.txt"
+bookmarks_file="${HOME}/.bookmarks"
 
 if [[ ! -f "${bookmarks_file}" ]]; then
     touch "${bookmarks_file}"
@@ -34,7 +34,7 @@ bookmark() {
   selection=$(bookmark_list | fzf --with-nth=1 --delimiter='\t' --preview 'echo {2}' --preview-window=up:1:wrap)
   [[ -n "${selection}" ]] || return
   url=$(echo "${selection}" | cut -f2)
-  librewolf "${url}"
+  xdg-open "${url}"
 }
 
 alias bm=bookmark
